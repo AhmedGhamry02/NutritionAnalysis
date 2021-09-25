@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   apiURL: 'https://api.edamam.com/api',
-  appID: '691908c9',
-  appKey: '090514279a6dbed99f36ede239383304'
+  appID: '47379841',
+  appKey: 'd28718060b8adfd39783ead254df7f92'
 };
