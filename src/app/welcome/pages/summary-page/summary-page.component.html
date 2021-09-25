@@ -1,0 +1,19 @@
+<div class="summary-page" *ngIf="!showEmptyContent">
+  <div class="title">
+    <h2>Nutrition Ingredient Summary</h2>
+  </div>
+  <div class="page-content">
+    <div class="summary-breakdown">
+      <app-summary-breakdown [ingredientsList]="ingredientsList"></app-summary-breakdown>
+      <div class="action-btns">
+        <p-button label="Back" icon="pi pi-arrow-left" routerLink="/"></p-button>
+        <p-button label="Total Nutrition" icon="pi pi-chart-bar" iconPos="right" [disabled]="showTotalNutrition"
+          (click)="showTotalNutrition = true"></p-button>
+      </div>
+    </div>
+    <div class="total-nutrition" *ngIf="showTotalNutrition">
+      <app-total-nutrition [totalNutrition]="totalNutrition"></app-total-nutrition>
+    </div>
+  </div>
+</div>
+<app-empty-content *ngIf="showEmptyContent"></app-empty-content>

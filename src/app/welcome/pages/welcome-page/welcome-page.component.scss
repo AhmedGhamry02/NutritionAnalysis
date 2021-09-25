@@ -1,0 +1,85 @@
+:host {
+  .welcome-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    background-color: var(--surface-c);
+    .content {
+      width: 40%;
+      min-height: 100vh;
+      padding: 0 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .title {
+        padding: 20px 0;
+        h1 {
+          margin: 0;
+          color: var(--pink-400);
+        }
+      }
+      .description {
+        padding: 15px;
+        p {
+          color: var(--text-color);
+          line-height: 1.7;
+          span {
+            color: var(--green-700);
+            font-weight: 600;
+            display: block;
+          }
+        }
+      }
+      .analis-form {
+        padding: 15px;
+        .input-item {
+          margin-bottom: 10px;
+          .p-inputtext {
+            width: 100%;
+          }
+          small {
+            display: block;
+            padding: 3px 5px;
+            color: var(--pink-700);
+            font-size: 12px;
+          }
+        }
+        ::ng-deep {
+          .p-button {
+            background: var(--green-600);
+            border-color: var(--green-600);
+            &:hover {
+              background: var(--green-500);
+              border-color: var(--green-500);
+            }
+          }
+        }
+      }
+      .foods-data {
+        padding: 15px;
+      }
+    }
+    .bg-img {
+      width: 60%;
+      min-height: 100vh;
+      background-image: url("/assets/images/healthy-food-background_23-2148123964.jpg");
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 85% 100%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-page {
+    flex-direction: column !important;
+    .content {
+      width: 100% !important;
+    }
+    .bg-img {
+      display: none;
+    }
+  }
+}

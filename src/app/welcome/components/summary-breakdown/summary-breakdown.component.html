@@ -1,0 +1,46 @@
+<div class="summary-breakdown">
+  <div class="card">
+    <p-table responsiveLayout="stack" [value]="ingredientsList">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Food Name</th>
+          <th>Calories</th>
+          <th>Weight</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-food let-columns="columns">
+        <tr>
+          <td>
+            <span class="p-column-title">Quantity</span>
+            {{ food.parsed[0].quantity }}
+          </td>
+          <td>
+            <span class="p-column-title">Unit</span>
+            {{ food.parsed[0].measure }}
+          </td>
+          <td>
+            <span class="p-column-title">Food Name</span>
+            {{ food.parsed[0].food | titlecase }}
+          </td>
+          <td>
+            <span class="p-column-title">Calories</span>
+            {{
+            (food.parsed[0].nutrients.ENERC_KCAL.quantity
+            | number: "1.0-1")! | removeComma
+            }}
+            {{ food.parsed[0].nutrients.ENERC_KCAL.unit }}
+          </td>
+          <td>
+            <span class="p-column-title">Weight</span>
+            {{
+            (food.parsed[0].weight | number: "1.0-1")! | removeComma
+            }}
+            g
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

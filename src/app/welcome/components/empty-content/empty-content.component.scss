@@ -1,0 +1,31 @@
+:host {
+  .empty-content {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--surface-c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .img {
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    .btn {
+      padding: 20px 0;
+      ::ng-deep {
+        .p-button {
+          background: var(--green-600);
+          border-color: var(--green-600);
+          &:hover {
+            background: var(--green-500);
+            border-color: var(--green-500);
+          }
+        }
+      }
+    }
+  }
+}

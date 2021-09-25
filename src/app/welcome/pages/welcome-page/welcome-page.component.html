@@ -1,0 +1,48 @@
+<div class="welcome-page">
+  <div class="content">
+    <div class="title">
+      <h1>Nutrition Analysis App</h1>
+    </div>
+    <div class="description">
+      <p>
+        Enter an ingredient list list for what you are cooking, like <span>1 cup rice <br> 10 oz chickpeas</span>,
+        etc.
+        Enter each ingredient on a new line.
+      </p>
+    </div>
+    <div class="analis-form">
+      <div class="input-item">
+        <textarea rows="8" pInputTextarea [formControl]="foodsInput" required minlength="10"></textarea>
+        <small *ngIf="foodsInput.hasError && foodsInput.dirty">
+          <span *ngIf="foodsInput.hasError('required')">Please enter at least an ingredient EX: 1 cup rice</span>
+          <span *ngIf="foodsInput.hasError('minlength')">Minimum 10 characters</span>
+        </small>
+      </div>
+      <p-button label="Analyze" icon="pi pi-check" iconPos="right" (onClick)="analyse()" [disabled]="foodsInput.invalid"
+        [loading]="btnLoading">
+      </p-button>
+    </div>
+    <div class="foods-data" *ngIf="myFoodsData">
+      <div class="card">
+        <p-table responsiveLayout="stack" [value]="myFoodsData">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th>Quantity</th>
+              <th>Unit</th>
+              <th>Food Name</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-food let-columns="columns">
+            <tr>
+              <td><span class="p-column-title">Quantity</span>{{food.quantity}}</td>
+              <td><span class="p-column-title">Unit</span>{{food.unit}}</td>
+              <td><span class="p-column-title">Food Name</span>{{food.name}}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+  <div class="bg-img"></div>
+</div>
+<p-toast></p-toast>

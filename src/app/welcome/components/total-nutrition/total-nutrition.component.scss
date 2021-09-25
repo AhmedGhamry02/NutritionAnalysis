@@ -1,0 +1,67 @@
+:host {
+  .total-nutrition {
+    .total-nutrition-card {
+      background: var(--surface-b);
+      border-radius: 5px;
+      border: 1px solid var(--surface-d);
+      .header {
+        text-align: center;
+        padding: 12px 0;
+        background: var(--green-600);
+        border-radius: 5px 5px 0 0;
+        h2 {
+          margin: 0;
+          color: #fff;
+          letter-spacing: 1.3px;
+        }
+      }
+      .content {
+        padding: 5px 0;
+        .item,
+        .head {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 5px 20px;
+          border-bottom: 1px solid var(--surface-400);
+          line-height: 2;
+          .text {
+            p {
+              font-size: 0.9em;
+              font-weight: 600;
+              margin: 0;
+              span {
+                font-weight: 400;
+              }
+            }
+          }
+          .value {
+            p {
+              margin: 0;
+            }
+          }
+          &.upper-item {
+            .text {
+              p {
+                font-size: 1.2em;
+              }
+            }
+            .value {
+              font-weight: 600;
+            }
+          }
+          &.head {
+            padding: 0 20px;
+            .value {
+              font-weight: 600;
+            }
+          }
+          &:last-of-type {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
